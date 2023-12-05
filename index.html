@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=>, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,10 +13,10 @@
 
     <link rel="stylesheet" href="src/index.css" />
 
-    <title>Document</title>
+    <title>Weather Application</title>
   </head>
   <body>
-    <div class="app">
+    <div class="weather-app">
       <header>
         <form class="search-form">
           <input
@@ -29,13 +29,17 @@
         </form>
       </header>
       <main>
-        <h1>London</h1>
-        <p>
-          Tuesday 08.23, Raining
-          <br />
-          Humidity: 67%, Wind 3.5km/h
-        </p>
-        🌧️ 12 °C
+        <div class="weather-app-data">
+          <div>
+            <h1>London</h1>
+            <p>
+              Tuesday 08.23, Raining
+              <br />
+              Humidity: 67%, Wind 3.5km/h
+            </p>
+          </div>
+          <div>⛈️ 12°C</div>
+        </div>
       </main>
 
       <footer>
