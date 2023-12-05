@@ -1,0 +1,18 @@
+body {
+    background-color: grey;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app{
+    background: white;
+    max-width: 600px;
+    margin: 30 px auto;
+    padding: 30px;
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+    border-radius: 15px;
+}
