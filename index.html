@@ -15,6 +15,7 @@
     />
 
     <link rel="stylesheet" href="src/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
     <title>Weather Application</title>
   </head>
@@ -29,20 +30,24 @@
             id="search-form-input"
             class="search-form-input"
           />
-          <form class="search-form" id="search-form" <input>
+          <form class="search-form" id="search-form">
       </form>
       </header>
       <main>
         <div class="weather-app-data">
           <div>
             <h1 class="weather-app-city" id="city">London</h1>
-            <p>
+            <p class="weather-app-details">
               Tuesday 08.23, Raining
               <br />
-              Humidity: 67%, Wind 3.5km/h
+              Humidity: <strong>67%</strong>, Wind <strong>3.4km/h</strong>
             </p>
           </div>
-          <div>⛈️ 12°C</div>
+         
+          <div class="weather-app-temperature-container">
+            <div class="weather-app-icon"> ⛈️ </div>
+            <div class="weather-app-temperature">12</div>
+              <div class="weather-app-unit">°C </div>
         </div>
       </main>
 

@@ -58,31 +58,31 @@ main {
 .weather-app-details {
     font-size: 16px;
     color: rgba(39, 33, 66, 0.4);
-    line-height: 24px;
+    line-height: 20px;
     font-weight: 500;
 }
 
 .weather-app-details strong {
-    color: #f65282;
+    color: goldenrod;
 }
 
 .weather-app-temperature-container {
     display: flex;
+    font-size: 14px;
 }
 
 .weather-app-icon {
-    font-size: 4
-    4px;
+    font-size: 48px;
     margin-top: 22px;
 }
 
 .weather-app-temperature {
-    font-size: 90px;
+    font-size: 85px;
     margin-left: 10px;
     font-weight: bold;
 }
 
-.weatehr-app-unit {
+.weather-app-unit {
     margin-top: 16px;
     font-size: 28px;
 }
