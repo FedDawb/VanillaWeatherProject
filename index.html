@@ -6,6 +6,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
@@ -18,20 +21,21 @@
   <body>
     <div class="weather-app">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a City.."
             required
+            id="search-form-input"
             class="search-form-input"
           />
-          <input type="submit" value="Search" class="search-form-button" />
-        </form>
+          <form class="search-form" id="search-form" <input>
+      </form>
       </header>
       <main>
         <div class="weather-app-data">
           <div>
-            <h1>London</h1>
+            <h1 class="weather-app-city" id="city">London</h1>
             <p>
               Tuesday 08.23, Raining
               <br />
@@ -59,5 +63,6 @@
         >
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
