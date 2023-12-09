@@ -32,33 +32,37 @@ function displayForecast(response) {
 
   let forcastElement = document.querySelector("#forecast");
 
-  let days = ["Tue", "Wed", "Thur", "Fri", "Sat"];
+  
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
       <div class="weather-forecast=day">
-        <div class="weather-forecast-date">${day}</div>
-        <div class="weather-forecast-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAZ9JREFUaN7tmdGNgzAMhhmBERiBEVjgJEbICIyQERiBTS4j5JU3RmCDnHNyq1wE1A4Jl0iJ9KtqVdv/R+xA1cYY05Ssos1XgCwBOGtd1x4kPfVNwhUFAI1rkDmRTgVyGwCMiQvjvkRWAGBoYJh/qc8JQAcAqCwAsO9NoBbQ5n1m38+g9ikAeQPgSjtofAJgTgTw0lg6wE5ppyAAmxj72CTWHB0Ae39/wPzvYEcDwKuuHzL+VkyAx81HA0h4ZKYHwNbZ/wvg4KFQcAFEJub/3Mk5ADJDgPcRWzKAVVc6wFQ6gKQA9EUD4H1AFdtCN3465jHEua8KUCzA1/c6gBbQxikI35cgZV8ZMae1ggAgUWuTgQxqIBqZnBhFjLmsFQognYRWI9HI7sRoxo6d1mIDQILOS0i9kosXNxBiPtYKAVBe0o7Yw27MQoT+WIsFYLfPSyiJRrQTY9uoJcSQapEBDoZpIxqZPCNTwOCe1uIAZDO4oQBbwOAK7uBya3EAFs7gHpwipMHl1uIADLi1XcNYGCOYMeRa9W/WClABKkAFiKofRnoGaQBkK9wAAAAASUVORK5CYII=" 
-         alt=""
-        width="30"
+        <div class="weather-forecast-date">Tue</div>
+
+
+        <img src="${day.condition.icon_url}" class="weather-forecast-icon"
+       
         />
         <div class="weather-forecast-temperatures">
          <div class="weather-forecast-temperature"></div>
         <span class="weather-forecast-temperature-max">
-      <strong>18°C</strong></span>
-    <span class="weather-forecast-temperature-min">12°C</span>
+      <strong>${Math.round(day.temperature.maximum)}°</strong></span>
+    <span class="weather-forecast-temperature-min">${Math.round(day.temperature.minimum)}°</span>
   </div>
 </div>
 </div>
   </div>
   `;
+    }
   });
 
   forcastElement.innerHTML = forecastHtml;
 }
+
 
 
 
