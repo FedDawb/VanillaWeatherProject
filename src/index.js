@@ -71,4 +71,3 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("London");
 getForecast("London");
-

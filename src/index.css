@@ -1,13 +1,13 @@
-body{
+body {
     background-color: goldenrod;
     font-family: 'Poppins', sans-serif;
 }
 
-a{
+a {
     color: goldenrod;
 }
 
-.weather-app{
+.weather-app {
     background: white;
     max-width: 600px;
     margin: 30px auto;
@@ -15,6 +15,7 @@ a{
     padding: 30px;
     border-radius: 16px;
 }
+
 header {
     border-bottom: 1px solid rgb(207, 205, 205);
     padding: 0 0 30px 0;
@@ -25,7 +26,7 @@ main {
     padding: 30px 0;
 }
 
-.search-form-input{
+.search-form-input {
     background-color: #f0efef;
     border: none;
     border-radius: 6px;
@@ -93,14 +94,14 @@ main {
 
 }
 
-.weather-forecast-day{
+.weather-forecast-day {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
     text-align: center;
 }
 
-.weather-forecast-date{
+.weather-forecast-date {
     font-size: 16px;
     opacity: 0.6;
 }
@@ -113,7 +114,7 @@ main {
     opacity: 0.5;
 }
 
-.weather-forecast-icon{
+.weather-forecast-icon {
     width: 100%;
 }
 
