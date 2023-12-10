@@ -4,7 +4,22 @@ function refeshWeather(response) {
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+
+let humidityElement = document.querySelector("#humidity");
+ humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+
+let windSpeedElement = document.querySelector("#wind-speed");
+  windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
+  
+descriptionElement.innerHTML = response.data.condition.description;
+let descriptionElement = document.querySelector("#description");
+
 }
+
+
 
 function searchCity(city) {
   let apiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
@@ -20,6 +35,12 @@ function handleSearchSubmit(event) {
  searchCity(searchInputElement.value);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
 
 function getForecast(city) {
   
@@ -41,7 +62,7 @@ function displayForecast(response) {
         forecastHtml +
         `
       <div class="weather-forecast=day">
-        <div class="weather-forecast-date">Tue</div>
+        <div class="weather-forecast-date">${formatDay(day.time)}</div>
 
 
         <img src="${day.condition.icon_url}" class="weather-forecast-icon"
