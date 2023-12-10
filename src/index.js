@@ -12,6 +12,8 @@ function refeshWeather(response) {
   let hours = now.getHours();
   let minutes = now.getMinutes();
 
+  getForecast(response.data.city);
+
  
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
   let day = days[now.getDay()];
@@ -105,4 +107,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("London");
-getForecast("London");
