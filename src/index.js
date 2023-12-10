@@ -7,6 +7,21 @@ function refeshWeather(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 
+  let now = new Date()
+  let date = now.getDate();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+ 
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  let day = days[now.getDay()];
+
+  let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  let month = months[now.getMonth()];
+  
+  let timeElement = document.querySelector("#time");
+  timeElement.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
+
 
 let humidityElement = document.querySelector("#humidity");
  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
@@ -49,8 +64,6 @@ function getForecast(city) {
   axios(apiUrl).then(displayForecast);
 }
 function displayForecast(response) {
-  console.log(response.data);
-
   let forcastElement = document.querySelector("#forecast");
 
   
@@ -92,3 +105,4 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("London");
 getForecast("London");
+displayForecast();
