@@ -29,8 +29,9 @@ let humidityElement = document.querySelector("#humidity");
 let windSpeedElement = document.querySelector("#wind-speed");
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   
-descriptionElement.innerHTML = response.data.condition.description;
-let descriptionElement = document.querySelector("#description");
+
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.condition.description;
 
 }
 
@@ -105,4 +106,3 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("London");
 getForecast("London");
-displayForecast();
