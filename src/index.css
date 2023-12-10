@@ -52,8 +52,8 @@ main {
 
 .weather-app-city {
     margin: 0;
-    font-size: 35px;
-    line-height: 48px;
+    font-size: 40px;
+    line-height: 50px;
 }
 
 .weather-app-details {
@@ -73,7 +73,7 @@ main {
 }
 
 .weather-app-icon {
-    font-size: 55px;
+    font-size: 70px;
     margin-top: 22px;
 }
 
