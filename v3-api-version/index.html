@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS and Axios -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <title>Weather Application</title>
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <!-- Search Form -->
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a City.."
+            required
+            id="search-form-input"
+            class="search-form-input"
+          />
+          <input
+            type="submit"
+            value="Search"
+            class="search-form-button"
+          />
+        </form>
+
+        <!-- Search History -->
+        <div class="search-history-container">
+          <h3>Search History</h3>
+          <ul id="search-history" class="search-history-list"></ul>
+        </div>
+      </header>
+
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city" id="city">London</h1>
+            <p class="weather-app-details">
+              <strong id="time">Sun 10.00</strong>,
+              <span id="description"></span><br />
+              Humidity: <strong id="humidity"></strong>,
+              Wind: <strong id="wind-speed"></strong>
+            </p>
+          </div>
+
+          <div class="weather-app-temperature-container">
+            <div id="icon">⛈️</div>
+            <div class="weather-app-temperature" id="temperature"></div>
+            <div class="weather-app-unit">°C</div>
+          </div>
+        </div>
+
+        <!-- 5-Day Forecast -->
+        <div id="forecast" class="weather-forecast-day"></div>
+      </main>
+
+      <footer>
+        Built by
+        <a href="https://github.com/FedDawb" target="_blank">Dawn Hughes</a> –
+        hosted on
+        <a
+          href="https://app.netlify.com/sites/fedawbweatherapp/overview"
+          target="_blank"
+        >
+          Netlify
+        </a>
+        – code on
+        <a
+          href="https://github.com/FedDawb/VanillaWeatherProject"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </footer>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
+
