@@ -18,6 +18,7 @@
 
     <title>Weather Application</title>
   </head>
+
   <body>
     <div class="weather-app">
       <header>
@@ -35,7 +36,13 @@
             value="Search"
             class="search-form-button"
           />
+
+          <span id="error-message" style="color: red; margin-top: 8px;"></span>
         </form>
+
+        <!--isert of error message-->
+        <span id="loading-message" style="display: none;">Loading...</span>
+        <div id="error-message" class="error-text"></div>
 
         <!-- Search History -->
         <div class="search-history-container">
