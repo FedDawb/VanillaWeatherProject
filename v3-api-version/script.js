@@ -176,6 +176,25 @@ function displayForecast(response) {
 
   forecastElement.innerHTML = forecastHtml;
 }
+let currentTemperatureCelsius = null;
+
+function updateTemperatureDisplay() {
+  const isFahrenheit = document.querySelector("#unit-toggle-checkbox").checked;
+  const displayTemp = isFahrenheit
+    ? Math.round((currentTemperatureCelsius * 9) / 5 + 32)
+    : Math.round(currentTemperatureCelsius);
+
+  document.querySelector("#temperature").innerHTML = `${displayTemp}°`;
+  document.querySelector("#unit-label").innerHTML = isFahrenheit ? "°F" : "°C";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector("#unit-toggle-checkbox");
+  if (toggle) {
+    toggle.addEventListener("change", updateTemperatureDisplay);
+  }
+});
+
 
 // Init
 let searchFormElement = document.querySelector("#search-form");

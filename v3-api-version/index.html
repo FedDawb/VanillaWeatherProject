@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <div class="weather-app">
+     <div class="weather-app default-background" id="weather-container">
       <header>
         <!-- Search Form -->
         <form class="search-form" id="search-form">
@@ -64,11 +64,20 @@
           </div>
 
           <div class="weather-app-temperature-container">
-            <div id="icon">⛈️</div>
-            <div class="weather-app-temperature" id="temperature"></div>
-            <div class="weather-app-unit">°C</div>
-          </div>
-        </div>
+  <div id="icon">⛈️</div>
+  <div class="weather-app-temperature" id="temperature"></div>
+  <div class="weather-app-unit">°C</div>
+</div>
+
+<!-- Moved toggle outside and below temperature box -->
+<div class="unit-toggle-container">
+  <label class="switch">
+    <input type="checkbox" id="unit-toggle-checkbox" />
+    <span class="slider round"></span>
+  </label>
+  <span id="unit-label">°C</span>
+</div>
+
 
         <!-- 5-Day Forecast -->
         <div id="forecast" class="weather-forecast-day"></div>
