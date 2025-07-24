@@ -1,6 +1,12 @@
+let currentTemperatureCelsius = 0;
+
 function refreshWeather(response) {
   let temperatureElement = document.querySelector(".weather-app-temperature");
   let temperature = response.data.temperature.current;
+
+  //added update of variable for toggle
+  currentTemperatureCelsius = temperature;
+
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
@@ -33,7 +39,11 @@ function refreshWeather(response) {
   let description = response.data.condition.description;
   descriptionElement.innerHTML = description;
 
+  //to update bg color based on weather descrip
   updateBackground(description.toLowerCase());
+
+  //to update temp display after new data loaded
+  updateTemperatureDisplay();
 }
 
 // Update background based on weather condition
@@ -176,10 +186,14 @@ function displayForecast(response) {
 
   forecastElement.innerHTML = forecastHtml;
 }
-let currentTemperatureCelsius = null;
 
+//temp display for c or f toggle
 function updateTemperatureDisplay() {
+  if(currentTemperatureCelsius === null || currentTemperatureCelsius === 0) return;
+  
   const isFahrenheit = document.querySelector("#unit-toggle-checkbox").checked;
+
+//stored celcius temp for F conversion
   const displayTemp = isFahrenheit
     ? Math.round((currentTemperatureCelsius * 9) / 5 + 32)
     : Math.round(currentTemperatureCelsius);
