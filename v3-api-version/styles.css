@@ -1,296 +1,98 @@
-/* Global Styles */
+/* General Styling from user, adapted for the app */
 body {
-  background-color: goldenrod;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /* Removed background images */
-  background-size: cover;
-  background-position: center;
-  transition: background-image 1s ease-in-out;
+    background-color: goldenrod;
+    font-family: 'Poppins', sans-serif;
 }
 
-a {
-  color: goldenrod;
-  text-decoration: none;
-}
-
+/* App Container - using Tailwind for max-width, margin, etc. */
 .weather-app {
-  max-width: 600px;
-  margin: 40px auto;
-
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: white;
+    color: #333; /* Dark text for light background */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.sunny {
-  background-color: #ffe57f;
-}
-
-.cloudy {
-  background-color: #dbe4ea;
-}
-
-.rainy {
-  background-color: #a1c4fd;
-}
-
-.snowy {
-  background-color: #f0faff;
-}
-
-.thunderstorm {
-  background-color: #4a4a4a;
-  color: white;
-}
-
-.wind {
-  background-color: #e0f7fa;
-}
-
-.default-background {
-  background-color: goldenrod;
-}
-
-/* Search Form */
-.search-form {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.search-form-input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
+/* Search Button Style */
 .search-form-button {
-  padding: 10px 16px;
-  border: none;
-  background-color: goldenrod;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: darkorange;
+    color: white;
 }
-
 .search-form-button:hover {
-  background-color: #c09800;
+    background-color: orange;
 }
 
-/* Search History Section */
-.search-history-container {
-  margin-bottom: 20px;
+/* Search Input Style */
+.search-form-input {
+    border: 2px solid #ccc;
+    color: #333;
+}
+.search-form-input::placeholder {
+    color: #999;
 }
 
-.search-history-container h3 {
-  margin-bottom: 8px;
+/* Main data panels */
+.data-panel {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(200, 200, 200, 0.5);
 }
 
-.search-history-list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  gap: 10px;
+/* Forecast day styling */
+.forecast-day {
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+.forecast-day:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+.forecast-day.active {
+    background-color: darkorange;
+    color: white;
+    transform: scale(1.05);
 }
 
-.search-history-list li {
-  background-color: #eee;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* Search History buttons */
+.history-button {
+     background-color: rgba(0, 0, 0, 0.1);
+}
+.history-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.search-history-list li:hover {
-  background-color: #ddd;
-}
-
-/* Weather Data */
-.weather-app-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.weather-app-city {
-  font-size: 28px;
-  margin: 0;
-}
-
-.weather-app-details {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-top: 10px;
-}
-
-/* Temperature Display */
-.weather-app-temperature-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 32px;
-}
-
-.weather-app-temperature {
-  font-weight: bold;
-}
-/* Slider toggle styles */
+/* Temp unit toggle switch */
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-  margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
+.switch input { opacity: 0; width: 0; height: 0; }
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 24px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
 }
-
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 18px; width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
 }
-
 input:checked + .slider {
-  background-color: #2196F3;
+    background-color: darkorange;
 }
-
 input:checked + .slider:before {
-  transform: translateX(26px);
+    transform: translateX(26px);
 }
-
-.unit-toggle-container {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-
-.weather-app-unit {
-  font-size: 18px;
-}
-
-/* Forecast Section */
-.weather-forecast-day {
-  display: flex;
-  flex-wrap: nowrap;          
-  overflow-x: auto;           
-  gap: 15px;
-  margin-top: 20px;
-  padding-bottom: 10px;       
-}
-
-
-.day {
-  background-color: #f8f8f8;
-  padding: 12px;
-  border-radius: 10px;
-  flex: 0 0 100px;            
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  white-space: normal;
-}
-
-@media (max-width: 500px) { 
-  .weather-forecast-day {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .day {
-    flex: 1 1 100%;
-    transition: transform 0.3s ease;
-  }
-
-  /* Enlarge on hover */
-  .day:hover {
-    transform: scale(1.1);
-    z-index: 10; /* Make sure hovered item appears on top */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* optional: stronger shadow */
-  }
-}
-
-
-.day img {
-  width: 40px;
-  height: 40px;
-}
-
-/* Footer */
-footer {
-  margin-top: 30px;
-  font-size: 13px;
-  text-align: center;
-  color: #555;
-}
-
-footer a {
-  text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 500px) {
-  .search-form {
-    flex-direction: column;
-  }
-
-  .weather-app-data {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .weather-forecast-day {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .day {
-    flex: 1 1 100%;
-  }
-
-  .search-history-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-}
-
-/* Removed background-image classes to keep plain goldenrod background */
-
-
-
-
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }

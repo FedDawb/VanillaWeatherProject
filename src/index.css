@@ -4,7 +4,7 @@ body {
 }
 
 a {
-    color: goldenrod;
+    color: rgb(201, 211, 235);
 }
 
 .weather-app {
@@ -39,7 +39,7 @@ main {
 }
 
 .search-form-button {
-    background-color: goldenrod;
+    background-color: rgb(210, 208, 203);
     padding: 15px 30px;
     border: none;
     font-size: 16px;
@@ -92,36 +92,36 @@ main {
 
 .weather-app-unit {
     margin-top: 16px;
-    font-size: 28px;
+   font-size: 28px;
+}
+
+.forecast-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
 }
 
 .weather-forecast {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    text-align: center;
-    flex-wrap: wrap;
-}
-
-
-.weather-forecast-days {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
 }
+
 
 .weather-forecast-day {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 10px;
+  min-width: 100px;
+  flex: 0 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   text-align: center;
-  flex: 1;
-  min-width: 120px;
-  max-width: 150px;
 }
+
 
 
 .weather-forecast-date {
@@ -138,18 +138,34 @@ main {
 }
 
 .weather-forecast-icon {
-    width: 100%;.weather-forecast-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-    }
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+}
 
+/* Wraps the current day's weather nicely */
+.current-weather-container {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
 }
 
 footer {
-    border-top: 1px solid rgb(207, 205, 2050);
+    border-top: 1px solid rgb(207, 205, 205);
     padding: 30px 0 0 0;
     text-align: center;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 600px) {
+  .weather-forecast {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weather-forecast-day {
+    width: 80%;
+  }
 }
