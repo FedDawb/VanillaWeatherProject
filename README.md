@@ -26,7 +26,7 @@ The original app was functional, but I wanted to learn a modern CSS framework to
 
 Why Tailwind CSS? I chose Tailwind CSS to build a responsive, utility-first design system. This approach is highly scalable and allowed me to create a polished, modern interface that works seamlessly across all devices.
 
-##  How I Utilized AI: 
+##  How I Utilised AI: 
 I leveraged an AI assistant as a pair-programming tool to accelerate the refactoring process. I used it to help structure the responsive grid layout and generate the initial Tailwind classes, which I then reviewed, tested, and customized. This demonstrates an ability to use modern tools to enhance productivity while maintaining full control over the final code quality.
 
 Phase 3: Building a Full-Stack Application with a Python Backend
